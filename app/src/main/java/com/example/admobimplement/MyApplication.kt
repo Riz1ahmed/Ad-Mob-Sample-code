@@ -10,7 +10,7 @@ class MyApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        MobileAds.initialize(this) { logD("Ad loaded") }
+        AdMobManger.initAdMob(this)
     }
 }
 

@@ -19,7 +19,7 @@
             android:text="Banner Ad" />
 
         <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
+            android:id="@+id/ad_view_banner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -30,31 +30,49 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Native Ad" />
+            android:layout_marginTop="16dp"
+            android:text="Smart Banner Ad" />
 
         <com.google.android.gms.ads.AdView
+            android:id="@+id/ad_view_smart_banner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            ads:adSize="BANNER"
+            ads:adSize="SMART_BANNER"
             ads:adUnitId="@string/admob_banner_id" />
 
         <Button
+
             android:id="@+id/btn_interstitial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Show Interstitial Ad" />
+            android:layout_marginTop="16dp"
+            android:text="Show Interstitial Ad"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_load_rewarded"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Load Rewarded Ad" />
+            android:text="Load Rewarded Ad"
+            android:textAllCaps="false" />
 
         <Button
             android:id="@+id/btn_show_rewarded"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Show Rewarded Ad" />
+            android:text="Show Rewarded Ad"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_native_ad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show Native Ad"
+            android:textAllCaps="false" />
+
+        <include
+            android:id="@+id/layout_native"
+            layout="@layout/native_ad_view" />
 
     </LinearLayout>
 </ScrollView>
