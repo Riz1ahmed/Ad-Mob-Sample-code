@@ -4,13 +4,17 @@ import android.app.Application
 import android.content.Context
 import android.util.Log
 import android.widget.Toast
+import com.google.android.gms.ads.AdLoader
+import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 
 class MyApplication : Application() {
-
+     //lateinit var adLoader:AdLoader
     override fun onCreate() {
         super.onCreate()
-        AdMobManger.initAdMob(this)
+        //AdMobManger.initAdMob(this)
+        MobileAds.initialize(this)
+        //adLoader.loadAd(AdRequest.Builder().build())
     }
 }
 
