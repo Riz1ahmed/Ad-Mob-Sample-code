@@ -17,7 +17,7 @@ package com.google.android.ads.nativetemplates;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 
-import com.google.firebase.crashlytics.buildtools.reloc.com.google.errorprone.annotations.CanIgnoreReturnValue;
+//import com.google.firebase.crashlytics.buildtools.reloc.com.google.errorprone.annotations.CanIgnoreReturnValue;
 //import com.google.errorprone.annotations.CanIgnoreReturnValue;
 
 /** A class containing the optional styling options for the Native Template. * */
@@ -160,7 +160,7 @@ public class NativeTemplateStyle {
       this.styles = new NativeTemplateStyle();
     }
 
-    @CanIgnoreReturnValue
+    /*@CanIgnoreReturnValue
     public Builder withCallToActionTextTypeface(Typeface callToActionTextTypeface) {
       this.styles.callToActionTextTypeface = callToActionTextTypeface;
       return this;
@@ -260,7 +260,7 @@ public class NativeTemplateStyle {
     public Builder withMainBackgroundColor(ColorDrawable mainBackgroundColor) {
       this.styles.mainBackgroundColor = mainBackgroundColor;
       return this;
-    }
+    }*/
 
     public NativeTemplateStyle build() {
       return styles;

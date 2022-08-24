@@ -44,8 +44,8 @@ public class TemplateView extends FrameLayout {
     private NativeAd nativeAd;
     private NativeAdView nativeAdView;
 
-    private TextView primaryView;
-    private TextView secondaryView;
+    private TextView titleView;
+    private TextView desctriptionView;
     private RatingBar ratingBar;
     private TextView tertiaryView;
     private ImageView iconView;
@@ -89,11 +89,11 @@ public class TemplateView extends FrameLayout {
         Drawable mainBackground = styles.getMainBackgroundColor();
         if (mainBackground != null) {
             background.setBackground(mainBackground);
-            if (primaryView != null) {
-                primaryView.setBackground(mainBackground);
+            if (titleView != null) {
+                titleView.setBackground(mainBackground);
             }
-            if (secondaryView != null) {
-                secondaryView.setBackground(mainBackground);
+            if (desctriptionView != null) {
+                desctriptionView.setBackground(mainBackground);
             }
             if (tertiaryView != null) {
                 tertiaryView.setBackground(mainBackground);
@@ -101,13 +101,13 @@ public class TemplateView extends FrameLayout {
         }
 
         Typeface primary = styles.getPrimaryTextTypeface();
-        if (primary != null && primaryView != null) {
-            primaryView.setTypeface(primary);
+        if (primary != null && titleView != null) {
+            titleView.setTypeface(primary);
         }
 
         Typeface secondary = styles.getSecondaryTextTypeface();
-        if (secondary != null && secondaryView != null) {
-            secondaryView.setTypeface(secondary);
+        if (secondary != null && desctriptionView != null) {
+            desctriptionView.setTypeface(secondary);
         }
 
         Typeface tertiary = styles.getTertiaryTextTypeface();
@@ -121,13 +121,13 @@ public class TemplateView extends FrameLayout {
         }
 
         int primaryTypefaceColor = styles.getPrimaryTextTypefaceColor();
-        if (primaryTypefaceColor > 0 && primaryView != null) {
-            primaryView.setTextColor(primaryTypefaceColor);
+        if (primaryTypefaceColor > 0 && titleView != null) {
+            titleView.setTextColor(primaryTypefaceColor);
         }
 
         int secondaryTypefaceColor = styles.getSecondaryTextTypefaceColor();
-        if (secondaryTypefaceColor > 0 && secondaryView != null) {
-            secondaryView.setTextColor(secondaryTypefaceColor);
+        if (secondaryTypefaceColor > 0 && desctriptionView != null) {
+            desctriptionView.setTextColor(secondaryTypefaceColor);
         }
 
         int tertiaryTypefaceColor = styles.getTertiaryTextTypefaceColor();
@@ -146,13 +146,13 @@ public class TemplateView extends FrameLayout {
         }
 
         float primaryTextSize = styles.getPrimaryTextSize();
-        if (primaryTextSize > 0 && primaryView != null) {
-            primaryView.setTextSize(primaryTextSize);
+        if (primaryTextSize > 0 && titleView != null) {
+            titleView.setTextSize(primaryTextSize);
         }
 
         float secondaryTextSize = styles.getSecondaryTextSize();
-        if (secondaryTextSize > 0 && secondaryView != null) {
-            secondaryView.setTextSize(secondaryTextSize);
+        if (secondaryTextSize > 0 && desctriptionView != null) {
+            desctriptionView.setTextSize(secondaryTextSize);
         }
 
         float tertiaryTextSize = styles.getTertiaryTextSize();
@@ -166,13 +166,13 @@ public class TemplateView extends FrameLayout {
         }
 
         Drawable primaryBackground = styles.getPrimaryTextBackgroundColor();
-        if (primaryBackground != null && primaryView != null) {
-            primaryView.setBackground(primaryBackground);
+        if (primaryBackground != null && titleView != null) {
+            titleView.setBackground(primaryBackground);
         }
 
         Drawable secondaryBackground = styles.getSecondaryTextBackgroundColor();
-        if (secondaryBackground != null && secondaryView != null) {
-            secondaryView.setBackground(secondaryBackground);
+        if (secondaryBackground != null && desctriptionView != null) {
+            desctriptionView.setBackground(secondaryBackground);
         }
 
         Drawable tertiaryBackground = styles.getTertiaryTextBackgroundColor();
@@ -197,39 +197,39 @@ public class TemplateView extends FrameLayout {
         String advertiser = nativeAd.getAdvertiser();
         String headline = nativeAd.getHeadline();
         String body = nativeAd.getBody();
-        String cta = nativeAd.getCallToAction();
+        String btnInstall = nativeAd.getCallToAction();
         Double starRating = nativeAd.getStarRating();
         NativeAd.Image icon = nativeAd.getIcon();
 
         String secondaryText;
 
         nativeAdView.setCallToActionView(callToActionView);
-        nativeAdView.setHeadlineView(primaryView);
+        nativeAdView.setHeadlineView(titleView);
         nativeAdView.setMediaView(mediaView);
-        secondaryView.setVisibility(VISIBLE);
+        desctriptionView.setVisibility(VISIBLE);
         if (adHasOnlyStore(nativeAd)) {
-            nativeAdView.setStoreView(secondaryView);
+            nativeAdView.setStoreView(desctriptionView);
             secondaryText = store;
         } else if (!TextUtils.isEmpty(advertiser)) {
-            nativeAdView.setAdvertiserView(secondaryView);
+            nativeAdView.setAdvertiserView(desctriptionView);
             secondaryText = advertiser;
         } else {
             secondaryText = "";
         }
 
-        primaryView.setText(headline);
-        callToActionView.setText(cta);
+        titleView.setText(headline);
+        callToActionView.setText(btnInstall);
 
         //  Set the secondary view to be the star rating if available.
         if (starRating != null && starRating > 0) {
-            secondaryView.setVisibility(GONE);
+            desctriptionView.setVisibility(GONE);
             ratingBar.setVisibility(VISIBLE);
             ratingBar.setRating(starRating.floatValue());
 
             nativeAdView.setStarRatingView(ratingBar);
         } else {
-            secondaryView.setText(secondaryText);
-            secondaryView.setVisibility(VISIBLE);
+            desctriptionView.setText(secondaryText);
+            desctriptionView.setVisibility(VISIBLE);
             ratingBar.setVisibility(GONE);
         }
 
@@ -286,12 +286,12 @@ public class TemplateView extends FrameLayout {
     public void onFinishInflate() {
         super.onFinishInflate();
         nativeAdView = findViewById(R.id.native_ad_view);
-        primaryView = findViewById(R.id.primary);
-        secondaryView = findViewById(R.id.secondary);
+        titleView = findViewById(R.id.txt_title);
+        desctriptionView = findViewById(R.id.txt_desctription);
         tertiaryView = findViewById(R.id.body);
         ratingBar = findViewById(R.id.rating_bar);
         ratingBar.setEnabled(false);
-        callToActionView = findViewById(R.id.cta);
+        callToActionView = findViewById(R.id.btn_install);
         iconView = findViewById(R.id.icon);
         mediaView = findViewById(R.id.media_view);
         background = findViewById(R.id.background);

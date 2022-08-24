@@ -10,7 +10,6 @@ import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdLoader
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.nativead.MediaView
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,7 +27,8 @@ class MainActivity : AppCompatActivity() {
 
         setupInterstitialAd()
         setupRewardedAd()
-        showDefaultNativeAd()
+        showDefaultMediumNativeAd()
+        showDefaultSmallNativeAd()
         showCustomNativeAd()
     }
 
@@ -78,13 +78,22 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showDefaultNativeAd() {
+    private fun showDefaultMediumNativeAd() {
+        AdLoader.Builder(this, getString(R.string.admob_native_ad_id))
+            .forNativeAd { nativeAd ->
+                logD("NativeAd loaded")
+                binding.avDefaultNativeMedium.setNativeAd(nativeAd)
+            }.build().loadAd(adRequest)
+    }
+
+    private fun showDefaultSmallNativeAd() {
         AdLoader.Builder(this, getString(R.string.admob_native_ad_id))
             .forNativeAd { nativeAd ->
                 logD("NativeAd loaded")
                 binding.avDefaultNative.setNativeAd(nativeAd)
             }.build().loadAd(adRequest)
     }
+
 
     private fun showCustomNativeAd() {
         logD("NativeAd loading...")
