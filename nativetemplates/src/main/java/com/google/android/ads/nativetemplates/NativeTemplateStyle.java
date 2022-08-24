@@ -13,12 +13,8 @@
 // limitations under the License.
 
 package com.google.android.ads.nativetemplates;
-
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
-
-//import com.google.firebase.crashlytics.buildtools.reloc.com.google.errorprone.annotations.CanIgnoreReturnValue;
-//import com.google.errorprone.annotations.CanIgnoreReturnValue;
 
 /** A class containing the optional styling options for the Native Template. * */
 public class NativeTemplateStyle {
