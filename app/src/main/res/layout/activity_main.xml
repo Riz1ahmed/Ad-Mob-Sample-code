@@ -131,14 +131,32 @@
             ads:layout_constraintTop_toBottomOf="@id/av_default_native" />
 
         <LinearLayout
+            android:id="@+id/layout_native_ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             ads:layout_constraintTop_toBottomOf="@id/txt_custom_native">
 
             <include
                 android:id="@+id/layout_native"
-                layout="@layout/native_ad_view"
+                layout="@layout/native_ad_sample"
                 ads:layout_constraintBottom_toBottomOf="parent" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_my_custom_native"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/black"
+            android:gravity="center"
+            android:text="My Custom native Ad"
+            android:textColor="@color/white"
+            ads:layout_constraintTop_toBottomOf="@id/layout_native_ll" />
+        <com.example.admobimplement.ad_views.AdMobNativeView
+            android:id="@+id/my_native_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ads:layout_constraintTop_toBottomOf="@id/txt_my_custom_native" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

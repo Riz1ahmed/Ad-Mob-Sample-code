@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.admobimplement.ad_utils.AdMobManger
 import com.example.admobimplement.databinding.ActivityMainBinding
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdLoader
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         showDefaultMediumNativeAd()
         showDefaultSmallNativeAd()
         showCustomNativeAd()
+        binding.myNativeView.initAd(getString(R.string.admob_native_ad_id))
     }
 
     private fun setupInterstitialAd() {

@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Office/AndroidStudioProjects/Ad-Mob-Sample-code/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Office/AndroidStudioProjects/Ad-Mob-Sample-code/app/src/main/res/layout/native_ad_sample.xml" value="0.2" />
         <entry key="..\:/Users/Office/AndroidStudioProjects/Ad-Mob-Sample-code/app/src/main/res/layout/native_ad_view.xml" value="0.22" />
         <entry key="..\:/Users/Office/AndroidStudioProjects/Ad-Mob-Sample-code/nativetemplates/src/main/res/drawable/gnt_rounded_corners_shape.xml" value="0.138" />
         <entry key="..\:/Users/Office/AndroidStudioProjects/Ad-Mob-Sample-code/nativetemplates/src/main/res/layout/gnt_medium_template_view.xml" value="0.33" />

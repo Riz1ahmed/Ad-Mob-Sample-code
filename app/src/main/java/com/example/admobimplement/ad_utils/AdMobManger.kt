@@ -1,8 +1,9 @@
-package com.example.admobimplement
+package com.example.admobimplement.ad_utils
 
 import android.app.Activity
 import android.content.Context
 import android.widget.Toast
+import com.example.admobimplement.R
 import com.google.android.ads.nativetemplates.TemplateView
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
@@ -22,7 +23,7 @@ object AdMobManger {
     private var adRequest: AdRequest = AdRequest.Builder().build()
 
     fun setAdRequest(adRequest: AdRequest) {
-        this.adRequest = adRequest
+        AdMobManger.adRequest = adRequest
     }
 
     fun setMaxAdLoadSize(size: Int) {
