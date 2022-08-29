@@ -31,7 +31,8 @@ class MainActivity : AppCompatActivity() {
         showDefaultMediumNativeAd()
         showDefaultSmallNativeAd()
         showCustomNativeAd()
-        binding.myNativeView.initAd(getString(R.string.admob_native_ad_id))
+        binding.myNativeView.initAd(getString(R.string.admob_native_ad_id),
+            object : AdListener() {})
     }
 
     private fun setupInterstitialAd() {
